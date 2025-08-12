@@ -1,8 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bell, Shield, User, Settings } from "lucide-react";
+import { Bell, Shield, User, Settings, LogOut } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 
 export const Header = () => {
+  const { user, signOut } = useAuth();
+
   return (
     <header className="h-16 border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
       <div className="h-full flex items-center justify-between px-6">
@@ -35,10 +38,13 @@ export const Header = () => {
           <div className="flex items-center space-x-2 pl-4 border-l">
             <div className="text-right">
               <p className="text-sm font-medium">Security Admin</p>
-              <p className="text-xs text-muted-foreground">admin@bank.co.ke</p>
+              <p className="text-xs text-muted-foreground">{user?.email}</p>
             </div>
             <Button variant="ghost" size="icon" className="rounded-full">
               <User className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon" onClick={signOut}>
+              <LogOut className="h-5 w-5" />
             </Button>
           </div>
         </div>
