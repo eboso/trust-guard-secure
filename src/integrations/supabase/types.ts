@@ -14,7 +14,231 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      dashboard_stats: {
+        Row: {
+          change_description: string | null
+          created_at: string
+          id: string
+          metadata: Json | null
+          stat_type: string
+          stat_value: string
+          timestamp: string
+          user_id: string | null
+        }
+        Insert: {
+          change_description?: string | null
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          stat_type: string
+          stat_value: string
+          timestamp?: string
+          user_id?: string | null
+        }
+        Update: {
+          change_description?: string | null
+          created_at?: string
+          id?: string
+          metadata?: Json | null
+          stat_type?: string
+          stat_value?: string
+          timestamp?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          role: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      security_analytics: {
+        Row: {
+          created_at: string
+          detection_rate: number
+          hourly_data: Json | null
+          id: string
+          threat_count: number
+          threat_types: Json | null
+          timestamp: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          detection_rate?: number
+          hourly_data?: Json | null
+          id?: string
+          threat_count?: number
+          threat_types?: Json | null
+          timestamp?: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          detection_rate?: number
+          hourly_data?: Json | null
+          id?: string
+          threat_count?: number
+          threat_types?: Json | null
+          timestamp?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      system_status: {
+        Row: {
+          created_at: string
+          id: string
+          last_check: string
+          metadata: Json | null
+          service_name: string
+          status: string
+          updated_at: string
+          uptime_percentage: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          last_check?: string
+          metadata?: Json | null
+          service_name: string
+          status: string
+          updated_at?: string
+          uptime_percentage?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          last_check?: string
+          metadata?: Json | null
+          service_name?: string
+          status?: string
+          updated_at?: string
+          uptime_percentage?: number
+        }
+        Relationships: []
+      }
+      threat_incidents: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          incident_id: string
+          location: string | null
+          metadata: Json | null
+          resolved_at: string | null
+          score: number
+          severity: string
+          status: string
+          threat_type: string
+          updated_at: string
+          user_email: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          id?: string
+          incident_id: string
+          location?: string | null
+          metadata?: Json | null
+          resolved_at?: string | null
+          score: number
+          severity: string
+          status?: string
+          threat_type: string
+          updated_at?: string
+          user_email: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          incident_id?: string
+          location?: string | null
+          metadata?: Json | null
+          resolved_at?: string | null
+          score?: number
+          severity?: string
+          status?: string
+          threat_type?: string
+          updated_at?: string
+          user_email?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      user_sessions: {
+        Row: {
+          created_at: string
+          ended_at: string | null
+          id: string
+          ip_address: unknown | null
+          is_protected: boolean | null
+          location: string | null
+          session_id: string
+          started_at: string
+          threat_score: number | null
+          user_agent: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          ended_at?: string | null
+          id?: string
+          ip_address?: unknown | null
+          is_protected?: boolean | null
+          location?: string | null
+          session_id: string
+          started_at?: string
+          threat_score?: number | null
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          ended_at?: string | null
+          id?: string
+          ip_address?: unknown | null
+          is_protected?: boolean | null
+          location?: string | null
+          session_id?: string
+          started_at?: string
+          threat_score?: number | null
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
